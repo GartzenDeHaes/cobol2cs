@@ -1,0 +1,75 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DOR.WorkingStorage", "DOR.WorkingStorage\DOR.WorkingStorage.csproj", "{641638EE-A621-4929-A551-C80586A33FD3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DOR.Core", "..\DOR.Core\DOR.Core\DOR.Core.csproj", "{9B060CA2-4185-49A5-84E8-417FBD18B342}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DOR.WorkingStorage.Test", "DOR.WorkingStorage.Test\DOR.WorkingStorage.Test.csproj", "{F04B7F8F-A8C6-44B4-9021-B1837D3EBA5C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BE0D6B02-F64C-4D05-9799-3F4C34827C0F}"
+	ProjectSection(SolutionItems) = preProject
+		DOR.WorkingStorage.vsmdi = DOR.WorkingStorage.vsmdi
+		Local.testsettings = Local.testsettings
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DOR.WPF", "..\DOR.WPF\DOR.WPF.csproj", "{4C1E57A8-D934-46C8-9189-9EB4EF7F66ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DOR.ShellContext.Model.Interfaces", "..\DorAppShell\DOR.ShellContext.Model.Interfaces\DOR.ShellContext.Model.Interfaces.csproj", "{DCB8CDC4-F6A3-405E-BD95-6C7868C9527C}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://dortfs2010:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = DOR.WorkingStorage\\DOR.WorkingStorage.csproj
+		SccProjectName1 = DOR.WorkingStorage
+		SccLocalPath1 = DOR.WorkingStorage
+		SccProjectUniqueName2 = ..\\DOR.Core\\DOR.Core\\DOR.Core.csproj
+		SccProjectName2 = ../DOR.Core/DOR.Core
+		SccLocalPath2 = ..\\DOR.Core\\DOR.Core
+		SccProjectUniqueName3 = DOR.WorkingStorage.Test\\DOR.WorkingStorage.Test.csproj
+		SccProjectName3 = DOR.WorkingStorage.Test
+		SccLocalPath3 = DOR.WorkingStorage.Test
+		SccProjectUniqueName4 = ..\\DOR.WPF\\DOR.WPF.csproj
+		SccProjectName4 = ../DOR.WPF
+		SccLocalPath4 = ..\\DOR.WPF
+		SccProjectUniqueName5 = ..\\DorAppShell\\DOR.ShellContext.Model.Interfaces\\DOR.ShellContext.Model.Interfaces.csproj
+		SccProjectName5 = ../DorAppShell/DOR.ShellContext.Model.Interfaces
+		SccLocalPath5 = ..\\DorAppShell\\DOR.ShellContext.Model.Interfaces
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = DOR.WorkingStorage.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{641638EE-A621-4929-A551-C80586A33FD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{641638EE-A621-4929-A551-C80586A33FD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{641638EE-A621-4929-A551-C80586A33FD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{641638EE-A621-4929-A551-C80586A33FD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B060CA2-4185-49A5-84E8-417FBD18B342}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B060CA2-4185-49A5-84E8-417FBD18B342}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B060CA2-4185-49A5-84E8-417FBD18B342}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B060CA2-4185-49A5-84E8-417FBD18B342}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F04B7F8F-A8C6-44B4-9021-B1837D3EBA5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F04B7F8F-A8C6-44B4-9021-B1837D3EBA5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F04B7F8F-A8C6-44B4-9021-B1837D3EBA5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F04B7F8F-A8C6-44B4-9021-B1837D3EBA5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C1E57A8-D934-46C8-9189-9EB4EF7F66ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C1E57A8-D934-46C8-9189-9EB4EF7F66ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C1E57A8-D934-46C8-9189-9EB4EF7F66ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C1E57A8-D934-46C8-9189-9EB4EF7F66ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCB8CDC4-F6A3-405E-BD95-6C7868C9527C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCB8CDC4-F6A3-405E-BD95-6C7868C9527C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCB8CDC4-F6A3-405E-BD95-6C7868C9527C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCB8CDC4-F6A3-405E-BD95-6C7868C9527C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

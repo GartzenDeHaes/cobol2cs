@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2D31FFD7-8D5B-4851-B840-A83B358C69C0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CobolParser</RootNamespace>
+    <AssemblyName>CobolParser</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CopyReplacement.cs" />
+    <Compile Include="Generator\CsProjFile.cs" />
+    <Compile Include="Generator\CsWpf.cs" />
+    <Compile Include="Generator\ISourceWriter.cs" />
+    <Compile Include="Generator\SourceWriterBase.cs" />
+    <Compile Include="Generator\SourceWriterBuffer.cs" />
+    <Compile Include="Generator\UnitTestProject.cs" />
+    <Compile Include="Parser\Divisions\Proc\AlternateRecordKey.cs" />
+    <Compile Include="Parser\Divisions\Proc\DeclareAfterError.cs" />
+    <Compile Include="Parser\Divisions\Proc\ReceiveControl.cs" />
+    <Compile Include="Parser\Divisions\Proc\Select.cs" />
+    <Compile Include="Parser\Divisions\Proc\SubRoutine.cs" />
+    <Compile Include="Parser\Divisions\DivisionType.cs" />
+    <Compile Include="Parser\Expressions\Expr.cs" />
+    <Compile Include="Parser\Expressions\IExpr.cs" />
+    <Compile Include="Parser\Expressions\ITerm.cs" />
+    <Compile Include="Parser\Expressions\Terms\Alphabetic.cs" />
+    <Compile Include="Parser\Expressions\Terms\Bool.cs" />
+    <Compile Include="Parser\Expressions\Terms\ExprTerm.cs" />
+    <Compile Include="Parser\Expressions\Terms\Function.cs" />
+    <Compile Include="Parser\Expressions\Terms\Id.cs" />
+    <Compile Include="Parser\Expressions\Terms\Negative.cs" />
+    <Compile Include="Parser\Expressions\Terms\Number.cs" />
+    <Compile Include="Parser\Expressions\Terms\Numeric.cs" />
+    <Compile Include="Parser\Expressions\Terms\OffsetReference.cs" />
+    <Compile Include="Parser\Expressions\Terms\Operator.cs" />
+    <Compile Include="Parser\Expressions\Terms\Positive.cs" />
+    <Compile Include="Parser\Expressions\Terms\Quote.cs" />
+    <Compile Include="Parser\Expressions\Terms\Range.cs" />
+    <Compile Include="Parser\Expressions\Terms\Space.cs" />
+    <Compile Include="Parser\Expressions\Terms\Spaces.cs" />
+    <Compile Include="Parser\Expressions\Terms\StringLit.cs" />
+    <Compile Include="Parser\Expressions\Terms\Zero.cs" />
+    <Compile Include="Parser\Expressions\Terms\Zeroes.cs" />
+    <Compile Include="Parser\Expressions\ValueList.cs" />
+    <Compile Include="Parser\Records\Picture.cs" />
+    <Compile Include="Parser\Records\FieldOption88.cs" />
+    <Compile Include="Parser\Records\INamedField.cs" />
+    <Compile Include="Parser\Records\IOffsetLocator.cs" />
+    <Compile Include="Parser\Records\Occurances.cs" />
+    <Compile Include="Parser\Records\Redefine.cs" />
+    <Compile Include="Parser\Records\Screen.cs" />
+    <Compile Include="Parser\Records\ScreenField.cs" />
+    <Compile Include="Parser\Records\Storage.cs" />
+    <Compile Include="Parser\Sections\Configuration.cs" />
+    <Compile Include="Parser\Sections\Declaratives.cs" />
+    <Compile Include="Parser\Sections\FileControl.cs" />
+    <Compile Include="Parser\Sections\FileSection.cs" />
+    <Compile Include="Parser\Sections\InputOutput.cs" />
+    <Compile Include="Parser\Sections\LinkageSection.cs" />
+    <Compile Include="Parser\Sections\MessageSection.cs" />
+    <Compile Include="Parser\Sections\ScreenControl.cs" />
+    <Compile Include="Parser\Sections\ScreenSection.cs" />
+    <Compile Include="Parser\Records\Offset.cs" />
+    <Compile Include="Parser\Records\OffsetAttributes.cs" />
+    <Compile Include="Parser\Sections\SpecialNames.cs" />
+    <Compile Include="Parser\Sections\WorkingStorageSection.cs" />
+    <Compile Include="Parser\SQL\Conds\CastCond.cs" />
+    <Compile Include="Parser\SQL\Conds\CondBetween.cs" />
+    <Compile Include="Parser\SQL\Conds\CondCase.cs" />
+    <Compile Include="Parser\SQL\Conds\CondDateFormat.cs" />
+    <Compile Include="Parser\SQL\Conds\CondDateTime.cs" />
+    <Compile Include="Parser\SQL\Conds\CondExists.cs" />
+    <Compile Include="Parser\SQL\Conds\CondExpr.cs" />
+    <Compile Include="Parser\SQL\Conds\CondField.cs" />
+    <Compile Include="Parser\SQL\Conds\CondFieldList.cs" />
+    <Compile Include="Parser\SQL\Conds\CondFunction.cs" />
+    <Compile Include="Parser\SQL\Conds\CondIn.cs" />
+    <Compile Include="Parser\SQL\Conds\CondInterval.cs" />
+    <Compile Include="Parser\SQL\Conds\CondNoOp.cs" />
+    <Compile Include="Parser\SQL\Conds\CondNull.cs" />
+    <Compile Include="Parser\SQL\Conds\CondOperator.cs" />
+    <Compile Include="Parser\SQL\Conds\CondParam.cs" />
+    <Compile Include="Parser\SQL\Conds\CondPostion.cs" />
+    <Compile Include="Parser\SQL\Conds\CondSubSelect.cs" />
+    <Compile Include="Parser\SQL\Conds\CondSubstring.cs" />
+    <Compile Include="Parser\SQL\Conds\CondTrim.cs" />
+    <Compile Include="Parser\SQL\Conds\CondValue.cs" />
+    <Compile Include="Parser\SQL\Conds\CondWhen.cs" />
+    <Compile Include="Parser\SQL\Conds\ISqlCondToken.cs" />
+    <Compile Include="Parser\SQL\Conds\Set.cs" />
+    <Compile Include="Parser\SQL\Conds\Current.cs" />
+    <Compile Include="Parser\SQL\OrderByItem.cs" />
+    <Compile Include="Parser\SQL\SqlExpr.cs" />
+    <Compile Include="Parser\SQL\SqlField.cs" />
+    <Compile Include="Parser\SQL\SqlJoin.cs" />
+    <Compile Include="Parser\SQL\SqlLex.cs" />
+    <Compile Include="Parser\SQL\SqlParser.cs" />
+    <Compile Include="Parser\SQL\SqlStatement.cs" />
+    <Compile Include="Parser\SQL\SqlTable.cs" />
+    <Compile Include="Parser\SQL\SqlToken.cs" />
+    <Compile Include="Parser\SQL\SqlType.cs" />
+    <Compile Include="Parser\SQL\Statements\Alter.cs" />
+    <Compile Include="Parser\SQL\Statements\BeginDeclareSection.cs" />
+    <Compile Include="Parser\SQL\Statements\BeginTrans.cs" />
+    <Compile Include="Parser\SQL\Statements\Close.cs" />
+    <Compile Include="Parser\SQL\Statements\CommitTrans.cs" />
+    <Compile Include="Parser\SQL\Statements\Control.cs" />
+    <Compile Include="Parser\SQL\Statements\Create.cs" />
+    <Compile Include="Parser\SQL\Statements\DeclareCursor.cs" />
+    <Compile Include="Parser\SQL\Statements\Delete.cs" />
+    <Compile Include="Parser\SQL\Statements\Describe.cs" />
+    <Compile Include="Parser\SQL\Statements\EndDeclareSection.cs" />
+    <Compile Include="Parser\SQL\Statements\Execute.cs" />
+    <Compile Include="Parser\SQL\Statements\Fetch.cs" />
+    <Compile Include="Parser\SQL\Statements\Free.cs" />
+    <Compile Include="Parser\SQL\Statements\Include.cs" />
+    <Compile Include="Parser\SQL\Statements\Insert.cs" />
+    <Compile Include="Parser\SQL\Statements\Invoke.cs" />
+    <Compile Include="Parser\SQL\Statements\LockTable.cs" />
+    <Compile Include="Parser\SQL\Statements\OpenSql.cs" />
+    <Compile Include="Parser\SQL\Statements\Prepare.cs" />
+    <Compile Include="Parser\SQL\Statements\RollbackTrans.cs" />
+    <Compile Include="Parser\SQL\Statements\Select.cs" />
+    <Compile Include="Parser\SQL\Statements\Update.cs" />
+    <Compile Include="Parser\Symbol.cs" />
+    <Compile Include="Parser\SymbolTable.cs" />
+    <Compile Include="Parser\Verbs\Phrases\AcceptUntilItem.cs" />
+    <Compile Include="Parser\Verbs\Phrases\UnstringItem.cs" />
+    <Compile Include="Parser\Verbs\StatementBlock.cs" />
+    <Compile Include="SyntaxWarning.cs" />
+    <Compile Include="TandemData\ColumnDef.cs" />
+    <Compile Include="TandemData\TandemDataAccess.cs" />
+    <Compile Include="Generator\CsFieldNameConverter.cs" />
+    <Compile Include="Generator\CsFormater.cs" />
+    <Compile Include="Generator\CsSql.cs" />
+    <Compile Include="Generator\CsVerbs.cs" />
+    <Compile Include="Generator\SourceWriter.cs" />
+    <Compile Include="Parser\Verbs\VerbLookup.cs" />
+    <Compile Include="CobolProgram.cs" />
+    <Compile Include="Parser\Divisions\DataDiv.cs" />
+    <Compile Include="Parser\Divisions\EnvironmentDiv.cs" />
+    <Compile Include="Parser\Divisions\IdentificationDiv.cs" />
+    <Compile Include="Parser\Divisions\ProcedureDiv.cs" />
+    <Compile Include="GuardianDefine.cs" />
+    <Compile Include="GuardianPath.cs" />
+    <Compile Include="Parser\Divisions\IDivision.cs" />
+    <Compile Include="ImportManager.cs" />
+    <Compile Include="Parser\Verbs\IVerb.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Parser\Sections\Section.cs" />
+    <Compile Include="Lexer\StringNode.cs" />
+    <Compile Include="SyntaxError.cs" />
+    <Compile Include="Lexer\Terminalize.cs" />
+    <Compile Include="Parser\Verbs\Commands\AbortTransaction.cs" />
+    <Compile Include="Parser\Verbs\Commands\Accept.cs" />
+    <Compile Include="Parser\Verbs\Commands\Add.cs" />
+    <Compile Include="Parser\Verbs\Commands\BeginTransaction.cs" />
+    <Compile Include="Parser\Verbs\Commands\Call.cs" />
+    <Compile Include="Parser\Verbs\Commands\Clear.cs" />
+    <Compile Include="Parser\Verbs\Commands\Close.cs" />
+    <Compile Include="Parser\Verbs\Commands\CompilerDirective.cs" />
+    <Compile Include="Parser\Verbs\Commands\CompilerWarning.cs" />
+    <Compile Include="Parser\Verbs\Commands\Compute.cs" />
+    <Compile Include="Parser\Verbs\Commands\Continue.cs" />
+    <Compile Include="Parser\Verbs\Commands\CopyVerb.cs" />
+    <Compile Include="Parser\Verbs\Commands\Delay.cs" />
+    <Compile Include="Parser\Verbs\Commands\Delete.cs" />
+    <Compile Include="Parser\Verbs\Commands\Display.cs" />
+    <Compile Include="Parser\Verbs\Commands\Divide.cs" />
+    <Compile Include="Parser\Verbs\Commands\EndTransaction.cs" />
+    <Compile Include="Parser\Verbs\Commands\Enter.cs" />
+    <Compile Include="Parser\Verbs\Commands\Evaluate.cs" />
+    <Compile Include="Parser\Verbs\Commands\ExecSql.cs" />
+    <Compile Include="Parser\Verbs\Commands\Exit.cs" />
+    <Compile Include="Parser\Verbs\Commands\Fd.cs" />
+    <Compile Include="Parser\Verbs\Commands\GoTo.cs" />
+    <Compile Include="Parser\Verbs\Commands\If.cs" />
+    <Compile Include="Parser\Verbs\Commands\Initialize.cs" />
+    <Compile Include="Parser\Verbs\Commands\Inspect.cs" />
+    <Compile Include="Parser\Verbs\Commands\Move.cs" />
+    <Compile Include="Parser\Verbs\Commands\Multiply.cs" />
+    <Compile Include="Parser\Verbs\Commands\Next.cs" />
+    <Compile Include="Parser\Verbs\Commands\Open.cs" />
+    <Compile Include="Parser\Verbs\Commands\Perform.cs" />
+    <Compile Include="Parser\Verbs\Commands\Period.cs" />
+    <Compile Include="Parser\Verbs\Phrases\EvalWhen.cs" />
+    <Compile Include="Parser\Verbs\Phrases\IInspectOperator.cs" />
+    <Compile Include="Parser\Verbs\Phrases\InspectConverting.cs" />
+    <Compile Include="Parser\Verbs\Phrases\InspectReplacing.cs" />
+    <Compile Include="Parser\Verbs\Phrases\InspectReplacingItem.cs" />
+    <Compile Include="Parser\Verbs\Phrases\InspectTallying.cs" />
+    <Compile Include="Parser\Verbs\Phrases\InspectTallyingItem.cs" />
+    <Compile Include="Parser\Verbs\Phrases\IoVerb.cs" />
+    <Compile Include="Parser\Verbs\Phrases\IPerformInner.cs" />
+    <Compile Include="Parser\Verbs\Phrases\OnErrorVerb.cs" />
+    <Compile Include="Parser\Verbs\Phrases\PerformCall.cs" />
+    <Compile Include="Parser\Verbs\Phrases\PerformOneOf.cs" />
+    <Compile Include="Parser\Verbs\Phrases\PerformStatements.cs" />
+    <Compile Include="Parser\Verbs\Phrases\PerformIteration.cs" />
+    <Compile Include="Parser\Verbs\Phrases\SearchWhen.cs" />
+    <Compile Include="Parser\Verbs\Phrases\SendReplyYields.cs" />
+    <Compile Include="Parser\Verbs\Phrases\StringItem.cs" />
+    <Compile Include="Parser\Verbs\Commands\Print.cs" />
+    <Compile Include="Parser\Verbs\Commands\Read.cs" />
+    <Compile Include="Parser\Verbs\Commands\Reset.cs" />
+    <Compile Include="Parser\Verbs\Commands\ReWrite.cs" />
+    <Compile Include="Parser\Verbs\Commands\Search.cs" />
+    <Compile Include="Parser\Verbs\Commands\Send.cs" />
+    <Compile Include="Parser\Verbs\Commands\Set.cs" />
+    <Compile Include="Parser\Verbs\Commands\Start.cs" />
+    <Compile Include="Parser\Verbs\Commands\Stop.cs" />
+    <Compile Include="Parser\Verbs\Commands\StringVerb.cs" />
+    <Compile Include="Parser\Verbs\Commands\Subtract.cs" />
+    <Compile Include="Parser\Verbs\Commands\Turn.cs" />
+    <Compile Include="Parser\Verbs\Commands\UnLockRecord.cs" />
+    <Compile Include="Parser\Verbs\Commands\Write.cs" />
+    <Compile Include="Parser\Verbs\VerbType.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DOR.Core\DOR.Core\DOR.Core.csproj">
+      <Project>{9b060ca2-4185-49a5-84e8-417fbd18b342}</Project>
+      <Name>DOR.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DOR.WorkingStorage\DOR.WorkingStorage\DOR.WorkingStorage.csproj">
+      <Project>{641638EE-A621-4929-A551-C80586A33FD3}</Project>
+      <Name>DOR.WorkingStorage</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Docs\defines.txt" />
+    <Content Include="Docs\TODO.txt" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

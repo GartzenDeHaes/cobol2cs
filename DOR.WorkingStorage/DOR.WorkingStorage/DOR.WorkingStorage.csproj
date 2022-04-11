@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{641638EE-A621-4929-A551-C80586A33FD3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DOR.WorkingStorage</RootNamespace>
+    <AssemblyName>DOR.WorkingStorage</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AbendException.cs" />
+    <Compile Include="AbortRunException.cs" />
+    <Compile Include="BufferType.cs" />
+    <Compile Include="CobolBase.cs" />
+    <Compile Include="Data\TandemCommand.cs" />
+    <Compile Include="Data\TandemDirectSql.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="HighValues.cs" />
+    <Compile Include="IBufferOffset.cs" />
+    <Compile Include="IoRecord.cs" />
+    <Compile Include="LowValues.cs" />
+    <Compile Include="MemoryBuffer.cs" />
+    <Compile Include="Numeric.cs" />
+    <Compile Include="NumericTemp.cs" />
+    <Compile Include="OnSizeError.cs" />
+    <Compile Include="Pic\CcAlpha.cs" />
+    <Compile Include="Pic\CcAlphaNum.cs" />
+    <Compile Include="Pic\CcBinary.cs" />
+    <Compile Include="Pic\CcDot.cs" />
+    <Compile Include="Pic\CcLit.cs" />
+    <Compile Include="Pic\CcMask.cs" />
+    <Compile Include="Pic\CcNoSign.cs" />
+    <Compile Include="Pic\CcNum.cs" />
+    <Compile Include="Pic\CcPlusSigned.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Pic\CcSigned.cs" />
+    <Compile Include="Pic\CcSignedTrailing.cs" />
+    <Compile Include="Pic\CcSpace.cs" />
+    <Compile Include="Pic\CcVDot.cs" />
+    <Compile Include="Pic\CharacterClass.cs" />
+    <Compile Include="Pic\ICharacterClass.cs" />
+    <Compile Include="Pic\PicFormat.cs" />
+    <Compile Include="Pic\PicScanner.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RangeEvaluator.cs" />
+    <Compile Include="Spaces.cs" />
+    <Compile Include="MockDataAccessBase.cs" />
+    <Compile Include="Wpf\CobolScreenBase.cs" />
+    <Compile Include="Wpf\CobolViewModelBase.cs" />
+    <Compile Include="WsRecord.cs" />
+    <Compile Include="Zeroes.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DOR.Core\DOR.Core\DOR.Core.csproj">
+      <Project>{9B060CA2-4185-49A5-84E8-417FBD18B342}</Project>
+      <Name>DOR.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

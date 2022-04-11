@@ -1,0 +1,35 @@
+﻿Required 4 Production Screen Conversion
+
+1. Secure the java servlet calls.
+3.  Add decimal to WsRecord relational operators.
+4.  Need unit test for NATIVE-4, NATIVE-2.
+
+Desirable Features
+
+1. Support SHADOWED BY PGFD-START-DATE-SB OF AL-VIEWCANC-SHADOW-REPLY(?)
+5. Generate java interfaces for COBOL servers; change server interfaces to 
+   make local or remote calls.
+6. Support TURN TEMP REVERSE?
+7. Generate textbox input filters based on the PIC format.
+8. Support WHEN ABSENT attribute?
+9. Support TURN NOUNDERLINE/UNDERLINE?
+10. Add support for batch programs.
+   - IoRecord Write isn't correct for files.
+      "WRITE F50-REL-ERROR-REC FROM W99-RPT-ENDING-TIME-LN AFTER 2"
+11. Perserve whitespace of the original program.
+12. Support MOVE SPACES TO TRA-STATUS-LIT OF WS-TRA-LINE (WS-SUB, WS-COL-SUB).
+
+General Issues
+
+•	Programs with transactions need some rework to use batch updates instead
+of transactions.
+
+•	The converted programs are highly resistant to refactoring, which 
+prevents incremental removal of the COBOL semantics.
+
+•	Data intensive screens require optimization after conversion.
+
+•	SQL/MP INTERVAL not supported in resultsets, i.e., you can't return it in a query.
+
+•	TURN on screen fields with OCCURES clause not supported.
+

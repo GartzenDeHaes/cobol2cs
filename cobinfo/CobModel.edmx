@@ -1,0 +1,391 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="WFTCModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="WFTCModelStoreContainer">
+          <EntitySet Name="CobDDL" EntityType="WFTCModel.Store.CobDDL" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CobFile" EntityType="WFTCModel.Store.CobFile" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CobFileXRef" EntityType="WFTCModel.Store.CobFileXRef" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CobScreen" EntityType="WFTCModel.Store.CobScreen" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CobScreenField" EntityType="WFTCModel.Store.CobScreenField" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_CobCopyXRef_CobFile1" Association="WFTCModel.Store.FK_CobCopyXRef_CobFile1">
+            <End Role="CobFile" EntitySet="CobFile" />
+            <End Role="CobFileXRef" EntitySet="CobFileXRef" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CobScreen_CobFile" Association="WFTCModel.Store.FK_CobScreen_CobFile">
+            <End Role="CobFile" EntitySet="CobFile" />
+            <End Role="CobScreen" EntitySet="CobScreen" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CobScreenField_CobFile" Association="WFTCModel.Store.FK_CobScreenField_CobFile">
+            <End Role="CobFile" EntitySet="CobFile" />
+            <End Role="CobScreenField" EntitySet="CobScreenField" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="CobDDL">
+          <Key>
+            <PropertyRef Name="Field_Name" />
+          </Key>
+          <Property Name="File_Name" Type="varchar" Nullable="false" MaxLength="40" />
+          <Property Name="Field_System_Code" Type="char" Nullable="false" MaxLength="2" />
+          <Property Name="Field_Name" Type="varchar" Nullable="false" MaxLength="40" />
+          <Property Name="Field_Pic_Txt" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Field_Heading_Txt" Type="varchar" Nullable="false" MaxLength="80" />
+          <Property Name="Field_Docs_Txt" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CobFile">
+          <Key>
+            <PropertyRef Name="File_Name" />
+          </Key>
+          <Property Name="File_Name" Type="varchar" Nullable="false" MaxLength="80" />
+          <Property Name="File_Prog_Name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="File_Type_Code" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="File_Loc_Num" Type="int" Nullable="false" />
+          <Property Name="File_Author_Name" Type="varchar" Nullable="false" MaxLength="80" />
+          <Property Name="File_Written_Dt" Type="varchar" Nullable="false" MaxLength="80" />
+          <Property Name="File_Header_Txt" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CobFileXRef">
+          <Key>
+            <PropertyRef Name="Xref_File_Name" />
+            <PropertyRef Name="Xref_DependsOnFile_Name" />
+          </Key>
+          <Property Name="Xref_File_Name" Type="varchar" Nullable="false" MaxLength="80" />
+          <Property Name="Xref_DependsOnFile_Name" Type="varchar" Nullable="false" MaxLength="80" />
+          <Property Name="Xref_Type_Code" Type="char" Nullable="false" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="CobScreen">
+          <Key>
+            <PropertyRef Name="File_Name" />
+            <PropertyRef Name="Screen_Name" />
+          </Key>
+          <Property Name="File_Name" Type="varchar" Nullable="false" MaxLength="80" />
+          <Property Name="Screen_Name" Type="varchar" Nullable="false" MaxLength="40" />
+          <Property Name="Screen_Num" Type="varchar" Nullable="false" MaxLength="40" />
+          <Property Name="Screen_IsOverlay_Ind" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CobScreenField">
+          <Key>
+            <PropertyRef Name="File_Name" />
+            <PropertyRef Name="Screen_Name" />
+            <PropertyRef Name="Field_Name" />
+            <PropertyRef Name="Field_Lvl_Num" />
+          </Key>
+          <Property Name="File_Name" Type="varchar" Nullable="false" MaxLength="80" />
+          <Property Name="Screen_Name" Type="varchar" Nullable="false" MaxLength="40" />
+          <Property Name="Field_Name" Type="varchar" Nullable="false" MaxLength="40" />
+          <Property Name="Field_Lvl_Num" Type="char" Nullable="false" MaxLength="2" />
+          <Property Name="Field_Line_Num" Type="int" Nullable="false" />
+          <Property Name="Field_X_Num" Type="int" Nullable="false" />
+          <Property Name="Field_Y_Num" Type="int" Nullable="false" />
+          <Property Name="Field_Pic_Txt" Type="varchar" MaxLength="40" />
+          <Property Name="Field_OverlayWidth_Num" Type="int" />
+          <Property Name="Field_OverlayHieght_Num" Type="int" />
+          <Property Name="Field_From_Txt" Type="varchar" MaxLength="140" />
+          <Property Name="Field_To_Txt" Type="varchar" MaxLength="100" />
+          <Property Name="Field_Using_Txt" Type="varchar" MaxLength="110" />
+          <Property Name="Field_Attribs_Txt" Type="varchar" MaxLength="12" />
+          <Property Name="Field_Upshift_Txt" Type="varchar" MaxLength="12" />
+          <Property Name="Field_WhenFull_Txt" Type="varchar" MaxLength="12" />
+          <Property Name="Field_WhenAbsent_Txt" Type="varchar" MaxLength="12" />
+          <Property Name="Field_WhenBlank_Txt" Type="varchar" MaxLength="12" />
+          <Property Name="Field_Fill_Txt" Type="varchar" MaxLength="40" />
+          <Property Name="Field_RequiredOptions_Txt" Type="varchar" MaxLength="2048" />
+          <Property Name="Field_RequiredLength_Txt" Type="varchar" MaxLength="20" />
+          <Property Name="DdlField_Name" Type="varchar" MaxLength="40" />
+        </EntityType>
+        <Association Name="FK_CobCopyXRef_CobFile1">
+          <End Role="CobFile" Type="WFTCModel.Store.CobFile" Multiplicity="1" />
+          <End Role="CobFileXRef" Type="WFTCModel.Store.CobFileXRef" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CobFile">
+              <PropertyRef Name="File_Name" />
+            </Principal>
+            <Dependent Role="CobFileXRef">
+              <PropertyRef Name="Xref_File_Name" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CobScreen_CobFile">
+          <End Role="CobFile" Type="WFTCModel.Store.CobFile" Multiplicity="1" />
+          <End Role="CobScreen" Type="WFTCModel.Store.CobScreen" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CobFile">
+              <PropertyRef Name="File_Name" />
+            </Principal>
+            <Dependent Role="CobScreen">
+              <PropertyRef Name="File_Name" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CobScreenField_CobFile">
+          <End Role="CobFile" Type="WFTCModel.Store.CobFile" Multiplicity="1" />
+          <End Role="CobScreenField" Type="WFTCModel.Store.CobScreenField" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CobFile">
+              <PropertyRef Name="File_Name" />
+            </Principal>
+            <Dependent Role="CobScreenField">
+              <PropertyRef Name="File_Name" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CobModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="CobEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CobFiles" EntityType="CobModel.CobFile" />
+          <EntitySet Name="CobFileXRefs" EntityType="CobModel.CobFileXRef" />
+          <AssociationSet Name="FK_CobCopyXRef_CobFile1" Association="CobModel.FK_CobCopyXRef_CobFile1">
+            <End Role="CobFile" EntitySet="CobFiles" />
+            <End Role="CobFileXRef" EntitySet="CobFileXRefs" />
+          </AssociationSet>
+          <EntitySet Name="CobScreens" EntityType="CobModel.CobScreen" />
+          <AssociationSet Name="FK_CobScreen_CobFile" Association="CobModel.FK_CobScreen_CobFile">
+            <End Role="CobFile" EntitySet="CobFiles" />
+            <End Role="CobScreen" EntitySet="CobScreens" />
+          </AssociationSet>
+          <EntitySet Name="CobScreenFields" EntityType="CobModel.CobScreenField" />
+          <AssociationSet Name="FK_CobScreenField_CobFile" Association="CobModel.FK_CobScreenField_CobFile">
+            <End Role="CobFile" EntitySet="CobFiles" />
+            <End Role="CobScreenField" EntitySet="CobScreenFields" />
+          </AssociationSet>
+          <EntitySet Name="CobDDLs" EntityType="CobModel.CobDDL" />
+          </EntityContainer>
+        <EntityType Name="CobFile">
+          <Key>
+            <PropertyRef Name="File_Name" />
+          </Key>
+          <Property Name="File_Name" Type="String" Nullable="false" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="File_Prog_Name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="File_Type_Code" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="File_Loc_Num" Type="Int32" Nullable="false" />
+          <Property Name="File_Author_Name" Type="String" Nullable="false" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="File_Written_Dt" Type="String" Nullable="false" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="File_Header_Txt" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="CobFileXRefs" Relationship="CobModel.FK_CobCopyXRef_CobFile1" FromRole="CobFile" ToRole="CobFileXRef" />
+          <NavigationProperty Name="CobScreens" Relationship="CobModel.FK_CobScreen_CobFile" FromRole="CobFile" ToRole="CobScreen" />
+          <NavigationProperty Name="CobScreenFields" Relationship="CobModel.FK_CobScreenField_CobFile" FromRole="CobFile" ToRole="CobScreenField" />
+        </EntityType>
+        <EntityType Name="CobFileXRef">
+          <Key>
+            <PropertyRef Name="Xref_File_Name" />
+            <PropertyRef Name="Xref_DependsOnFile_Name" />
+          </Key>
+          <Property Type="String" Name="Xref_File_Name" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Xref_DependsOnFile_Name" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Xref_Type_Code" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="CobFile" Relationship="CobModel.FK_CobCopyXRef_CobFile1" FromRole="CobFileXRef" ToRole="CobFile" />
+        </EntityType>
+        <Association Name="FK_CobCopyXRef_CobFile1">
+          <End Type="CobModel.CobFile" Role="CobFile" Multiplicity="1" />
+          <End Type="CobModel.CobFileXRef" Role="CobFileXRef" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CobFile">
+              <PropertyRef Name="File_Name" />
+            </Principal>
+            <Dependent Role="CobFileXRef">
+              <PropertyRef Name="Xref_File_Name" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="CobScreen">
+          <Key>
+            <PropertyRef Name="File_Name" />
+            <PropertyRef Name="Screen_Name" />
+          </Key>
+          <Property Type="String" Name="File_Name" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Screen_Name" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Screen_Num" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CobFile" Relationship="CobModel.FK_CobScreen_CobFile" FromRole="CobScreen" ToRole="CobFile" />
+          <Property Type="Boolean" Name="Screen_IsOverlay_Ind" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_CobScreen_CobFile">
+          <End Type="CobModel.CobFile" Role="CobFile" Multiplicity="1" />
+          <End Type="CobModel.CobScreen" Role="CobScreen" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CobFile">
+              <PropertyRef Name="File_Name" />
+            </Principal>
+            <Dependent Role="CobScreen">
+              <PropertyRef Name="File_Name" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="CobScreenField">
+          <Key>
+            <PropertyRef Name="File_Name" />
+            <PropertyRef Name="Screen_Name" />
+            <PropertyRef Name="Field_Name" />
+            <PropertyRef Name="Field_Lvl_Num" />
+          </Key>
+          <Property Type="String" Name="File_Name" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Screen_Name" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Field_Name" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Field_Lvl_Num" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Type="Int32" Name="Field_X_Num" Nullable="false" />
+          <Property Type="Int32" Name="Field_Y_Num" Nullable="false" />
+          <Property Type="String" Name="Field_Pic_Txt" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Field_OverlayWidth_Num" />
+          <Property Type="Int32" Name="Field_OverlayHieght_Num" />
+          <Property Type="String" Name="Field_From_Txt" MaxLength="140" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Field_To_Txt" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Field_Using_Txt" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Field_Attribs_Txt" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Field_Upshift_Txt" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Field_WhenFull_Txt" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Field_WhenAbsent_Txt" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Field_WhenBlank_Txt" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Field_Fill_Txt" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Field_RequiredOptions_Txt" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Field_RequiredLength_Txt" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CobFile" Relationship="CobModel.FK_CobScreenField_CobFile" FromRole="CobScreenField" ToRole="CobFile" />
+          <Property Type="Int32" Name="Field_Line_Num" Nullable="false" />
+          <Property Type="String" Name="DdlField_Name" MaxLength="40" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_CobScreenField_CobFile">
+          <End Type="CobModel.CobFile" Role="CobFile" Multiplicity="1" />
+          <End Type="CobModel.CobScreenField" Role="CobScreenField" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CobFile">
+              <PropertyRef Name="File_Name" />
+            </Principal>
+            <Dependent Role="CobScreenField">
+              <PropertyRef Name="File_Name" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="CobDDL">
+          <Key>
+            <PropertyRef Name="Field_Name" />
+          </Key>
+          <Property Type="String" Name="File_Name" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Field_System_Code" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="Field_Name" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Field_Pic_Txt" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Field_Heading_Txt" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Field_Docs_Txt" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="WFTCModelStoreContainer" CdmEntityContainer="CobEntities">
+          <EntitySetMapping Name="CobFiles"><EntityTypeMapping TypeName="CobModel.CobFile"><MappingFragment StoreEntitySet="CobFile">
+            <ScalarProperty Name="File_Name" ColumnName="File_Name" />
+            <ScalarProperty Name="File_Prog_Name" ColumnName="File_Prog_Name" />
+            <ScalarProperty Name="File_Type_Code" ColumnName="File_Type_Code" />
+            <ScalarProperty Name="File_Loc_Num" ColumnName="File_Loc_Num" />
+            <ScalarProperty Name="File_Author_Name" ColumnName="File_Author_Name" />
+            <ScalarProperty Name="File_Written_Dt" ColumnName="File_Written_Dt" />
+            <ScalarProperty Name="File_Header_Txt" ColumnName="File_Header_Txt" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="CobFileXRefs">
+            <EntityTypeMapping TypeName="CobModel.CobFileXRef">
+              <MappingFragment StoreEntitySet="CobFileXRef">
+                <ScalarProperty Name="Xref_Type_Code" ColumnName="Xref_Type_Code" />
+                <ScalarProperty Name="Xref_DependsOnFile_Name" ColumnName="Xref_DependsOnFile_Name" />
+                <ScalarProperty Name="Xref_File_Name" ColumnName="Xref_File_Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CobScreens">
+            <EntityTypeMapping TypeName="CobModel.CobScreen">
+              <MappingFragment StoreEntitySet="CobScreen">
+                <ScalarProperty Name="Screen_IsOverlay_Ind" ColumnName="Screen_IsOverlay_Ind" />
+                <ScalarProperty Name="Screen_Num" ColumnName="Screen_Num" />
+                <ScalarProperty Name="Screen_Name" ColumnName="Screen_Name" />
+                <ScalarProperty Name="File_Name" ColumnName="File_Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CobScreenFields">
+            <EntityTypeMapping TypeName="CobModel.CobScreenField">
+              <MappingFragment StoreEntitySet="CobScreenField">
+                <ScalarProperty Name="DdlField_Name" ColumnName="DdlField_Name" />
+                <ScalarProperty Name="Field_Line_Num" ColumnName="Field_Line_Num" />
+                <ScalarProperty Name="Field_RequiredLength_Txt" ColumnName="Field_RequiredLength_Txt" />
+                <ScalarProperty Name="Field_RequiredOptions_Txt" ColumnName="Field_RequiredOptions_Txt" />
+                <ScalarProperty Name="Field_Fill_Txt" ColumnName="Field_Fill_Txt" />
+                <ScalarProperty Name="Field_WhenBlank_Txt" ColumnName="Field_WhenBlank_Txt" />
+                <ScalarProperty Name="Field_WhenAbsent_Txt" ColumnName="Field_WhenAbsent_Txt" />
+                <ScalarProperty Name="Field_WhenFull_Txt" ColumnName="Field_WhenFull_Txt" />
+                <ScalarProperty Name="Field_Upshift_Txt" ColumnName="Field_Upshift_Txt" />
+                <ScalarProperty Name="Field_Attribs_Txt" ColumnName="Field_Attribs_Txt" />
+                <ScalarProperty Name="Field_Using_Txt" ColumnName="Field_Using_Txt" />
+                <ScalarProperty Name="Field_To_Txt" ColumnName="Field_To_Txt" />
+                <ScalarProperty Name="Field_From_Txt" ColumnName="Field_From_Txt" />
+                <ScalarProperty Name="Field_OverlayHieght_Num" ColumnName="Field_OverlayHieght_Num" />
+                <ScalarProperty Name="Field_OverlayWidth_Num" ColumnName="Field_OverlayWidth_Num" />
+                <ScalarProperty Name="Field_Pic_Txt" ColumnName="Field_Pic_Txt" />
+                <ScalarProperty Name="Field_Y_Num" ColumnName="Field_Y_Num" />
+                <ScalarProperty Name="Field_X_Num" ColumnName="Field_X_Num" />
+                <ScalarProperty Name="Field_Lvl_Num" ColumnName="Field_Lvl_Num" />
+                <ScalarProperty Name="Field_Name" ColumnName="Field_Name" />
+                <ScalarProperty Name="Screen_Name" ColumnName="Screen_Name" />
+                <ScalarProperty Name="File_Name" ColumnName="File_Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CobDDLs">
+            <EntityTypeMapping TypeName="CobModel.CobDDL">
+              <MappingFragment StoreEntitySet="CobDDL">
+                <ScalarProperty Name="Field_Docs_Txt" ColumnName="Field_Docs_Txt" />
+                <ScalarProperty Name="Field_Heading_Txt" ColumnName="Field_Heading_Txt" />
+                <ScalarProperty Name="Field_Pic_Txt" ColumnName="Field_Pic_Txt" />
+                <ScalarProperty Name="Field_Name" ColumnName="Field_Name" />
+                <ScalarProperty Name="Field_System_Code" ColumnName="Field_System_Code" />
+                <ScalarProperty Name="File_Name" ColumnName="File_Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="CobModel">
+        <EntityTypeShape EntityType="CobModel.CobFile" Width="1.5" PointX="0.75" PointY="0.75" Height="2.085348307291667" IsExpanded="true" />
+        <EntityTypeShape EntityType="CobModel.CobFileXRef" Width="1.5" PointX="3" PointY="1.125" Height="1.5923063151041668" />
+        <AssociationConnector Association="CobModel.FK_CobCopyXRef_CobFile1" >
+          <ConnectorPoint PointX="2.25" PointY="1.9211531575520833" />
+          <ConnectorPoint PointX="3" PointY="1.9211531575520833" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="CobModel.CobScreen" Width="1.5" PointX="3" PointY="4.125" Height="1.5923063151041657" />
+        <AssociationConnector Association="CobModel.FK_CobScreen_CobFile" >
+          <ConnectorPoint PointX="1.29687375" PointY="3.328390299479167" />
+          <ConnectorPoint PointX="1.29687375" PointY="5.0033268229166667" />
+          <ConnectorPoint PointX="1.7213560416666669" PointY="5.0033268229166659" />
+          <ConnectorPoint PointX="1.8880227083333334" PointY="5.0033268229166667" />
+          <ConnectorPoint PointX="3" PointY="5.0033268229166667" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="CobModel.CobScreenField" Width="1.5" PointX="3" PointY="7.375" Height="4.5505582682291656" />
+        <AssociationConnector Association="CobModel.FK_CobScreenField_CobFile" >
+          <ConnectorPoint PointX="1.8046893750000002" PointY="3.328390299479167" />
+          <ConnectorPoint PointX="1.8046893750000002" PointY="9.6502791341145837" />
+          <ConnectorPoint PointX="3" PointY="9.6502791341145837" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="CobModel.CobDDL" Width="1.5" PointX="5.375" PointY="0.75" Height="1.9210009765624996" />
+        </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

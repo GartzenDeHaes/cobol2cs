@@ -1,0 +1,74 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DOR.Core", "DOR.Core\DOR.Core.csproj", "{9B060CA2-4185-49A5-84E8-417FBD18B342}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DOR.Core.Test", "DOR.Core.Test\DOR.Core.Test.csproj", "{7AB526C0-F8D8-4073-9CF2-0BBC69A24344}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DOR.Core.Services", "DOR.Core.Services\DOR.Core.Services.csproj", "{7F37040D-2930-460C-8755-7CF2C2F95418}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreServices", "CoreServices\CoreServices.csproj", "{F2821B0F-415B-4AD9-A06F-BD02399B7F17}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{004682D6-7177-4A68-9212-0E96355C8267}"
+	ProjectSection(SolutionItems) = preProject
+		DOR.Core.vsmdi = DOR.Core.vsmdi
+		LocalTestRun.testrunconfig = LocalTestRun.testrunconfig
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://dortfs2010:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = DOR.Core\\DOR.Core.csproj
+		SccProjectName1 = DOR.Core
+		SccLocalPath1 = DOR.Core
+		SccProjectUniqueName2 = DOR.Core.Test\\DOR.Core.Test.csproj
+		SccProjectName2 = DOR.Core.Test
+		SccLocalPath2 = DOR.Core.Test
+		SccProjectUniqueName3 = DOR.Core.Services\\DOR.Core.Services.csproj
+		SccProjectName3 = DOR.Core.Services
+		SccLocalPath3 = DOR.Core.Services
+		SccProjectUniqueName4 = CoreServices\\CoreServices.csproj
+		SccProjectName4 = CoreServices
+		SccLocalPath4 = CoreServices
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = DOR.Core.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		CCNET|Any CPU = CCNET|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9B060CA2-4185-49A5-84E8-417FBD18B342}.CCNET|Any CPU.ActiveCfg = Release|Any CPU
+		{9B060CA2-4185-49A5-84E8-417FBD18B342}.CCNET|Any CPU.Build.0 = Release|Any CPU
+		{9B060CA2-4185-49A5-84E8-417FBD18B342}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B060CA2-4185-49A5-84E8-417FBD18B342}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B060CA2-4185-49A5-84E8-417FBD18B342}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B060CA2-4185-49A5-84E8-417FBD18B342}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AB526C0-F8D8-4073-9CF2-0BBC69A24344}.CCNET|Any CPU.ActiveCfg = CCNET|Any CPU
+		{7AB526C0-F8D8-4073-9CF2-0BBC69A24344}.CCNET|Any CPU.Build.0 = CCNET|Any CPU
+		{7AB526C0-F8D8-4073-9CF2-0BBC69A24344}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AB526C0-F8D8-4073-9CF2-0BBC69A24344}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AB526C0-F8D8-4073-9CF2-0BBC69A24344}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AB526C0-F8D8-4073-9CF2-0BBC69A24344}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F37040D-2930-460C-8755-7CF2C2F95418}.CCNET|Any CPU.ActiveCfg = Release|Any CPU
+		{7F37040D-2930-460C-8755-7CF2C2F95418}.CCNET|Any CPU.Build.0 = Release|Any CPU
+		{7F37040D-2930-460C-8755-7CF2C2F95418}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F37040D-2930-460C-8755-7CF2C2F95418}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F37040D-2930-460C-8755-7CF2C2F95418}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F37040D-2930-460C-8755-7CF2C2F95418}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2821B0F-415B-4AD9-A06F-BD02399B7F17}.CCNET|Any CPU.ActiveCfg = Release|Any CPU
+		{F2821B0F-415B-4AD9-A06F-BD02399B7F17}.CCNET|Any CPU.Build.0 = Release|Any CPU
+		{F2821B0F-415B-4AD9-A06F-BD02399B7F17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2821B0F-415B-4AD9-A06F-BD02399B7F17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2821B0F-415B-4AD9-A06F-BD02399B7F17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2821B0F-415B-4AD9-A06F-BD02399B7F17}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
