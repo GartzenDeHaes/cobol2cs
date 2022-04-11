@@ -237,7 +237,6 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="DLL\Attunity.Data.AisClient.dll" />
     <Content Include="MvvmLight\License.txt" />
   </ItemGroup>
   <ItemGroup>

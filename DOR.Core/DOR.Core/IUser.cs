@@ -13,18 +13,18 @@ namespace DOR.Core
 	/// </summary>
 	public interface IUser
 	{
-		/// <summary>Agency number (140 for revenue)</summary>
+		/// <summary>Agency number</summary>
 		int AgencyId { get; }
 
-		/// <summary>Windows domain name (fe: DOR)</summary>
+		/// <summary>Windows domain name</summary>
 		string Domain { get; }
 
-		/// <summary>Windows logon ID (fe: abcis140)</summary>
+		/// <summary>Windows logon ID</summary>
 		string LogonId { get; }
 
 		string GuardianId { get; }
 
-		/// <summary>Windows domain and logon (fe: DOR\abcis140)</summary>
+		/// <summary>Windows domain and logon</summary>
 		string LogonIdWithDomain { get; }
 
 		/// <summary>Tandem user ID</summary>
