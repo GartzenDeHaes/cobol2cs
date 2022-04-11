@@ -3,7 +3,9 @@ COBOL / SCOBOL to C#/WPF Translator
 
 ## Summary
 
-
+- Pre-BETA software.
+- HP Non-Stop COBOL to C# translator with an 85% to 99% accuracy rate.  The translator always outputs something, even if it's just he original COBOL, allowing for manual translation of problematic COBOL input.
+- It can also parse SQL/MP and ouput Java servlets with dynamic SQL queries.
 
 ## Projects
 
