@@ -39,4 +39,4 @@ WORKING-STORAGE emulation.  In an analysis of a 5 million line COBOL code base, 
 
 ### WinFormsUI
 
-A WPF docking container UI uses in the Windows runtime.
+A WPF docking container UI used in the Windows runtime.
